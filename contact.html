@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — L'Atelier du Bonsaï Yakushima</title>
+<meta name="description" content="Contactez Maria Millet pour toute question sur les ateliers et stages de bonsaï à Ainay-le-Vieil (Cher). Email, téléphone ou formulaire en ligne.">
+<link rel="stylesheet" href="assets/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://atelier-bonsai-yakushima.pages.dev/"},
+    {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://atelier-bonsai-yakushima.pages.dev/contact.html"}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="logo">L'Atelier du Bonsaï<span>Yakushima</span></a>
+    <nav aria-label="Navigation principale">
+      <ul class="nav-desktop">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="ateliers.html">Les ateliers</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-toggle" aria-expanded="false" aria-controls="nav-mobile" aria-label="Ouvrir le menu">
+      <span class="mobile-toggle__icon"></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Navigation mobile">
+    <a href="index.html">Accueil</a>
+    <a href="ateliers.html">Les ateliers</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero" style="padding: var(--space-xl) 0;">
+    <div class="container">
+      <p class="eyebrow">Contact</p>
+      <h1>Une question ? Envie de vous inscrire ?</h1>
+      <p class="hero__lead">Écrivez-moi directement ou passez par le formulaire ci-dessous, je vous réponds au plus vite.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <h2>Mes coordonnées</h2>
+        <div class="contact-info">
+          <p><strong>Email</strong><br><a href="mailto:Maria.millet18@gmail.com">Maria.millet18@gmail.com</a></p>
+          <p><strong>Téléphone</strong><br><a href="tel:+33762358057">07 62 35 80 57</a></p>
+          <p><strong>Lieu</strong><br>Ainay-le-Vieil (Cher)</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Formulaire de contact</h2>
+        <!--
+          Formulaire Web3Forms (https://web3forms.com/) : service gratuit d'envoi de formulaire
+          sans backend à héberger. Créer un compte gratuit sur web3forms.com, récupérer la clé
+          d'accès, et la coller ci-dessous à la place de "VOTRE_CLE_WEB3FORMS".
+        -->
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="VOTRE_CLE_WEB3FORMS">
+          <input type="hidden" name="subject" content="Nouveau message depuis le site Atelier du Bonsaï Yakushima">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="form-field">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-field">
+            <label for="phone">Téléphone (facultatif)</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary">Envoyer le message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__inner">
+      <div>
+        <p class="logo" style="margin-bottom: 8px;">L'Atelier du Bonsaï<span>Yakushima</span></p>
+        <p>Ateliers et stages d'initiation au bonsaï<br>Ainay-le-Vieil (Cher)</p>
+      </div>
+      <div>
+        <h3 style="color:#fff;">Contact</h3>
+        <p><a href="mailto:Maria.millet18@gmail.com">Maria.millet18@gmail.com</a><br>
+        <a href="tel:+33762358057">07 62 35 80 57</a></p>
+      </div>
+      <div>
+        <h3 style="color:#fff;">Navigation</h3>
+        <p><a href="index.html">Accueil</a><br><a href="ateliers.html">Les ateliers</a><br><a href="a-propos.html">À propos</a><br><a href="contact.html">Contact</a></p>
+      </div>
+    </div>
+    <div class="site-footer__bottom">&copy; 2026 L'Atelier du Bonsaï Yakushima — Ainay-le-Vieil (Cher)</div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
