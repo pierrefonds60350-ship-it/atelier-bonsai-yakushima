@@ -39,15 +39,44 @@ travail, dépôt Git et déploiement Cloudflare Pages séparés.
     └── images/            ← vide pour l'instant, voir "Visuels à fournir"
 ```
 
-## Palette (thème chaleureux / artisanal, inspiré du bonsaï et du Japon)
+## Direction artistique — épurée, zen, japonisante (2026-07-16)
 
-Définie dans `:root` de `assets/css/style.css`, contrastes vérifiés ≥ 4,5:1 pour texte blanc
-sur boutons primaire/accent :
-- **Vert mousse** (`--color-primary-*`) — couleur principale, boutons, liens.
-- **Terre cuite** (`--color-accent-*`) — accents, CTA secondaires.
-- **Bois** (`--color-wood-*`) — bordures, touches chaleureuses.
-- **Encre** (`--color-ink-*`) — texte, fonds sombres (header/footer).
-- **Crème / sable** (`--color-cream-*`, `--color-sand-*`) — fonds clairs.
+À la demande de la cliente (« LE SITE DOIT ETRE EPURÉ ZEN A LA JAPONAISE »), le design a été
+repensé dans cet esprit après une première version plus « artisanale/chaleureuse ». Principes
+à respecter pour toute nouvelle page ou section :
+- **Beaucoup de blanc/vide** : espacements de section généreux (`--space-2xl: 100px`), pas de
+  surcharge visuelle, un seul point d'attention par section.
+- **Pas d'ombres, pas de dégradés** : composants à plat, séparés par des filets fins
+  (`--color-line`, 1px) plutôt que des `box-shadow`. `.theme-grid` utilise un filet de grille
+  1px plutôt que des cartes ombrées.
+- **Rouge vermillon utilisé avec parcimonie** (`--color-vermillion-*`) : comme un sceau
+  (« hanko ») japonais, jamais en aplat large sauf le bandeau CTA (`.cta-banner`, fond encre +
+  liseré vermillon en haut, pas de bloc vermillon plein comme avant).
+- **Motif `.ornament`** (trait fin + petit cercle) en haut des sections/hero pour un rythme
+  calme, esprit zen.
+- **Le sceau `.hanko`** : carré vermillon avec le kanji 山 (yama, « montagne », clin d'œil à
+  Yakushima) à côté du nom du site dans le logo, tient lieu de logo temporaire tant que la
+  cliente n'en a pas fourni.
+
+Palette définie dans `:root` de `assets/css/style.css`, contrastes vérifiés ≥ 4,5:1 pour texte
+blanc sur boutons primaire/accent :
+- **Encre** (`--color-ink-*`) — texte, fond du footer et du bandeau CTA (seuls fonds sombres).
+- **Papier** (`--color-paper-*`) — fonds clairs (proche d'un papier washi), y compris le header
+  (fond clair avec filet bas, pas de bandeau sombre comme dans la première version).
+- **Mousse / matcha** (`--color-sage-*`) — couleur principale, titres, boutons primaires, liens.
+- **Vermillon** (`--color-vermillion-*`) — accent rare (sceau, eyebrow, liseré CTA, focus ring).
+
+## Illustrations en attendant les photos réelles
+
+Aucune photo/logo n'a encore été fournie par la cliente (« PAS ENCORE DE LOGO NI DE PHOTO »).
+Plutôt que d'utiliser de fausses photos de banque (problème de droits + décalage avec le
+« vrai » atelier), les emplacements `.split__media` utilisent des **illustrations SVG en trait
+fin, dessinées à la main dans le code** (pas de fichier binaire, pas de dépendance externe) :
+un bonsaï stylisé (silhouette + pot) et un enso (cercle zen incomplet), tous deux en
+`stroke="currentColor"` pour hériter de la couleur du composant. Elles sont dupliquées telles
+quelles dans `index.html` et `a-propos.html`. **À remplacer par de vraies photos dès
+réception**, mais le style trait-fin peut être conservé comme identité graphique même après
+(par exemple en complément des photos, pas uniquement en placeholder).
 
 ## Contenu — sources et statut
 

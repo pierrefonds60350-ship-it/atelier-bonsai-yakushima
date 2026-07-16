@@ -12,7 +12,7 @@
 
 <header class="site-header">
   <div class="site-header__inner">
-    <a href="index.html" class="logo">L'Atelier du Bonsaï<span>Yakushima</span></a>
+    <a href="index.html" class="logo"><span class="hanko" aria-hidden="true">山</span><span class="logo__text">L'Atelier du Bonsaï<span class="logo__sub">Yakushima</span></span></a>
     <nav aria-label="Navigation principale">
       <ul class="nav-desktop">
         <li><a href="index.html" aria-current="page">Accueil</a></li>
@@ -37,13 +37,17 @@
 
   <section class="hero">
     <div class="container">
+      <div class="ornament"><span class="ornament__dot"></span></div>
       <p class="eyebrow">Ainay-le-Vieil · Cher</p>
       <h1>L'Atelier du Bonsaï Yakushima</h1>
       <p class="hero__lead">Des stages découverte et de perfectionnement pour apprendre à cultiver, façonner et faire vivre votre propre bonsaï, dans une ambiance conviviale et décontractée.</p>
       <div class="hero__actions">
         <a href="ateliers.html" class="btn btn--accent">Découvrir les ateliers</a>
-        <a href="contact.html" class="btn btn--ghost" style="border-color:#fff;color:#fff;">Nous contacter</a>
+        <a href="contact.html" class="btn btn--ghost">Nous contacter</a>
       </div>
+      <svg class="hero__art" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" role="presentation">
+        <path d="M100 20 C150 20 180 55 180 100 C180 145 145 180 98 180 C55 180 22 148 20 105 C19 85 25 70 35 58" />
+      </svg>
     </div>
   </section>
 
@@ -57,14 +61,28 @@
         <p>Sous forme d'ateliers pédagogiques en groupe ou individuel, nous aborderons de nombreux points essentiels à la pratique du bonsaï.</p>
         <a href="ateliers.html" class="btn btn--primary">Voir le programme des ateliers</a>
       </div>
-      <div class="split__media" role="img" aria-label="Illustration évoquant l'art du bonsaï"></div>
+      <div class="split__media" role="img" aria-label="Illustration évoquant l'art du bonsaï">
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <path d="M60 165 L140 165 L130 190 L70 190 Z" />
+          <line x1="55" y1="165" x2="145" y2="165" />
+          <path d="M100 165 C95 140 105 120 95 100 C90 88 100 75 98 60" />
+          <ellipse cx="70" cy="95" rx="28" ry="10" />
+          <ellipse cx="130" cy="80" rx="24" ry="9" />
+          <ellipse cx="95" cy="55" rx="30" ry="11" />
+          <path d="M98 90 C85 92 78 94 72 95" />
+          <path d="M97 75 C110 77 122 79 128 80" />
+        </svg>
+      </div>
     </div>
   </section>
 
   <section class="section section--alt">
     <div class="container">
-      <p class="eyebrow">Au programme</p>
-      <h2>Les thèmes abordés en atelier</h2>
+      <div class="section--center">
+        <div class="ornament"><span class="ornament__dot"></span></div>
+        <p class="eyebrow">Au programme</p>
+        <h2>Les thèmes abordés en atelier</h2>
+      </div>
       <div class="theme-grid">
         <div class="theme-card"><h3>Formes et styles</h3><p>Découvrir les grandes formes et styles de bonsaï.</p></div>
         <div class="theme-card"><h3>Outils et matériel</h3><p>Outils, substrats, conseils d'achats pour bien débuter.</p></div>
@@ -73,16 +91,20 @@
         <div class="theme-card"><h3>Rempotage</h3><p>Rempotage et taille des racines.</p></div>
         <div class="theme-card"><h3>Le Tokonoma</h3><p>Comment exposer un arbre selon la tradition japonaise.</p></div>
       </div>
-      <p style="margin-top: var(--space-lg);"><a href="ateliers.html" class="btn btn--primary">Voir les 11 thèmes abordés</a></p>
+      <p class="section--center" style="margin-top: var(--space-lg);"><a href="ateliers.html" class="btn btn--primary">Voir les 11 thèmes abordés</a></p>
     </div>
   </section>
 
   <section class="section">
     <div class="container split">
-      <div class="split__media" role="img" aria-label="Illustration évoquant Maria Millet et son atelier" style="order:-1;"></div>
+      <div class="split__media" role="img" aria-label="Illustration évoquant Maria Millet et son atelier" style="order:-1;">
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100 20 C150 20 180 55 180 100 C180 145 145 180 98 180 C55 180 22 148 20 105 C19 85 25 70 35 58" />
+        </svg>
+      </div>
       <div>
         <p class="eyebrow">À propos</p>
-        <h2>Qui suis-je ?</h2>
+        <h2>Qui suis&#8209;je&nbsp;?</h2>
         <blockquote class="quote-block">« Le bonsaï a été pour moi une vraie découverte : humilité, respect de l'arbre et la paix que cela dégage m'ont beaucoup inspirée. »</blockquote>
         <p>Maria Millet pratique le bonsaï depuis plus de 25 ans et s'est formée pendant 8 ans à l'Académie Bonsaï, auprès de Senseï Yudji Akanuma.</p>
         <a href="a-propos.html" class="btn btn--primary">En savoir plus sur Maria</a>
@@ -104,7 +126,7 @@
   <div class="container">
     <div class="site-footer__inner">
       <div>
-        <p class="logo" style="margin-bottom: 8px;">L'Atelier du Bonsaï<span>Yakushima</span></p>
+        <p class="logo" style="margin-bottom: 8px;"><span class="hanko" aria-hidden="true">山</span><span class="logo__text">L'Atelier du Bonsaï<span class="logo__sub">Yakushima</span></span></p>
         <p>Ateliers et stages d'initiation au bonsaï<br>Ainay-le-Vieil (Cher)</p>
       </div>
       <div>
