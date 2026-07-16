@@ -66,17 +66,34 @@ blanc sur boutons primaire/accent :
 - **Mousse / matcha** (`--color-sage-*`) — couleur principale, titres, boutons primaires, liens.
 - **Vermillon** (`--color-vermillion-*`) — accent rare (sceau, eyebrow, liseré CTA, focus ring).
 
-## Illustrations en attendant les photos réelles
+## Illustrations et photos — statut (mis à jour 2026-07-16)
 
-Aucune photo/logo n'a encore été fournie par la cliente (« PAS ENCORE DE LOGO NI DE PHOTO »).
-Plutôt que d'utiliser de fausses photos de banque (problème de droits + décalage avec le
-« vrai » atelier), les emplacements `.split__media` utilisent des **illustrations SVG en trait
-fin, dessinées à la main dans le code** (pas de fichier binaire, pas de dépendance externe) :
-un bonsaï stylisé (silhouette + pot) et un enso (cercle zen incomplet), tous deux en
-`stroke="currentColor"` pour hériter de la couleur du composant. Elles sont dupliquées telles
-quelles dans `index.html` et `a-propos.html`. **À remplacer par de vraies photos dès
-réception**, mais le style trait-fin peut être conservé comme identité graphique même après
-(par exemple en complément des photos, pas uniquement en placeholder).
+Le site a d'abord utilisé des **illustrations SVG en trait fin, dessinées à la main dans le
+code** (pas de fichier binaire, pas de dépendance externe) en l'absence de toute photo : un
+bonsaï stylisé (silhouette + pot) et un enso (cercle zen incomplet), en `stroke="currentColor"`.
+Ce motif SVG reste disponible dans l'historique git si besoin de le réintroduire ailleurs sur le
+site (par exemple en complément de photos, pas uniquement en placeholder).
+
+Trois photos ont ensuite été intégrées comme **placeholders temporaires**, à remplacer dès que
+la cliente aura ses propres photos (elle l'a confirmé explicitement : « on peut placer ces
+photos, qui seront remplacées par Maria ») :
+- `assets/images/hero-bonsai-alcove.webp` (hero accueil) et
+  `assets/images/a-propos-bonsai-genevrier.webp` (page à propos) : deux photos de la banque
+  **Pexels** (licence gratuite, usage commercial autorisé sans attribution — vérifié avant
+  intégration), ne représentent pas les arbres réels de Maria.
+- `assets/images/atelier-ligature-taille.webp` (page ateliers, mains en train de ligaturer/
+  tailler un pin) : extraite de la livraison photo professionnelle de l'événement « Jardins et
+  Nature en Fête 2026 » (dossier `Desktop/JNF2026/.../Photo JNF 2026/`), où Maria intervient
+  comme experte bonsaï. Usage confirmé explicitement par la cliente pour ce site, en attendant
+  ses propres photos.
+
+**Point de vigilance photos en général sur ce projet** : plusieurs photos proposées par la
+cliente au fil de la conversation se sont révélées non réutilisables et ont été écartées :
+une photo de presse (crédit photographe + journal régional, droit d'auteur tiers) et une photo
+de provenance non identifiée (« resize pixel », probablement trouvée en ligne). Toujours
+vérifier la provenance (nom de fichier, dossier source, mention explicite de la cliente) avant
+d'intégrer une photo fournie en pièce jointe de conversation plutôt qu'en fichier déposé
+directement dans le projet.
 
 ## Contenu — sources et statut
 
@@ -93,17 +110,17 @@ repris tel quel (légère relecture orthographique/typographique autorisée, pas
 
 ## Visuels à fournir par la cliente
 
-`assets/images/` est vide pour l'instant. En attendant les vraies photos, le site utilise des
-fonds dégradés CSS (tons vert mousse / terre cuite) à la place de photos, sans fausse image
-de banque. **À remplacer dès réception** :
-- Photo(s) de l'atelier / des bonsaïs de Maria (hero de l'accueil).
-- Photo de Maria (page à propos).
-- Logo, si la cliente en a un (sinon le site utilise un simple lettrage « Yakushima »).
+Voir « Illustrations et photos — statut » ci-dessus pour l'état actuel (3 photos temporaires en
+place). Toujours à fournir par la cliente, pour remplacer ces placeholders :
+- Vraies photos de l'atelier / des bonsaïs de Maria (hero de l'accueil, page à propos).
+- Photo de Maria elle-même (page à propos) — aucune n'a encore été jugée réutilisable, voir
+  « Point de vigilance photos » ci-dessus.
+- Logo, si la cliente en a un (sinon le site garde le sceau `.hanko` 山 en logo temporaire).
 
 ## Prochaines étapes
 
-1. Récupérer les photos/logo auprès de la cliente et les intégrer (remplacer les fonds
-   dégradés CSS par de vraies images, compressées avant intégration).
+1. Récupérer les vraies photos/logo auprès de la cliente et remplacer les 3 placeholders
+   temporaires (voir « Illustrations et photos — statut »).
 2. Créer un compte gratuit sur web3forms.com, générer une clé d'accès, la renseigner dans
    `contact.html` (`<input type="hidden" name="access_key" value="...">`).
 3. Décider des informations pratiques manquantes (tarifs, durée des stages, dates, nombre de
