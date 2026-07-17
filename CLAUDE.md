@@ -106,6 +106,15 @@ photos, qui seront remplacées par Maria ») :
   comme experte bonsaï. Usage confirmé explicitement par la cliente pour ce site, en attendant
   ses propres photos.
 
+**Portrait de Maria (2026-07-17, vraie photo, pas un placeholder)** : `assets/images/
+maria-portrait.webp`, détouré en cercle (480×480, canal alpha, fond transparent hors du cercle)
+à partir d'un fichier fourni par la cliente (`~/Desktop/IA/Bonsaï/photo Maria.heif`, HEIF converti
+en JPEG via `sips`, recadrage visage au carré puis masque circulaire via Pillow, pas besoin de
+`rembg` ici — juste un crop + masque, le fond du carré source est conservé jusqu'au bord du
+cercle). Affiché en `.author-badge` (56px, filet fin) à côté du nom « Maria Millet », dans les
+deux sections « Qui suis-je ? » (accueil et à propos). Contrairement aux 3 photos ci-dessus, **ce
+n'est pas un placeholder** : c'est la vraie photo de la cliente, à garder telle quelle.
+
 **Outil de détourure** : `rembg` (modèle U2Net, ~176 Mo téléchargé au premier usage dans
 `~/.u2net/`) installé via `pip3 install rembg onnxruntime` — pas encore dans un fichier de
 dépendances du projet puisque ce n'est pas un besoin récurrent du build (aucun build step), juste
@@ -135,22 +144,47 @@ repris tel quel (légère relecture orthographique/typographique autorisée, pas
 
 ## Visuels à fournir par la cliente
 
-Voir « Illustrations et photos — statut » ci-dessus pour l'état actuel (3 photos temporaires en
-place). Toujours à fournir par la cliente, pour remplacer ces placeholders :
-- Vraies photos de l'atelier / des bonsaïs de Maria (hero de l'accueil, page à propos).
-- Photo de Maria elle-même (page à propos) — aucune n'a encore été jugée réutilisable, voir
-  « Point de vigilance photos » ci-dessus.
+Voir « Illustrations et photos — statut » ci-dessus pour l'état actuel. Le portrait de Maria est
+maintenant une vraie photo (voir ci-dessus), plus un placeholder. Toujours à fournir par la
+cliente, pour remplacer les 3 placeholders restants :
+- Vraies photos de l'atelier / des bonsaïs de Maria (hero de l'accueil, page à propos, page
+  ateliers).
 - Logo, si la cliente en a un (sinon le site garde le sceau `.hanko` 山 en logo temporaire).
+
+## Déploiement (2026-07-17)
+
+- **Dépôt GitHub** : `pierrefonds60350-ship-it/atelier-bonsai-yakushima` (privé), créé et publié
+  par le client lui-même via GitHub Desktop (Add Local Repository → Publish repository), pas par
+  moi (création de dépôt = action nécessitant confirmation explicite de l'utilisateur, refusée
+  deux fois par le classifieur auto-mode avant que le client la fasse lui-même).
+- **Cloudflare Pages** : projet `atelier-bonsai-yakushima`, déployé sur
+  `https://atelier-bonsai-yakushima.pages.dev`, dans le même compte Cloudflare que
+  drevantjnf.fr (sous-domaine `drevantjnf.workers.dev`).
+  **Déployé par glisser-déposer d'un zip (« direct upload »), PAS par connexion Git.** Plusieurs
+  tentatives de connecter le dépôt GitHub ont échoué (la fenêtre d'autorisation GitHub
+  redirigeait systématiquement vers la page d'info de l'app plutôt que vers un écran
+  d'autorisation, y compris en repartant de zéro depuis Paramètres → Build → Référentiel Git →
+  Connexion). Non résolu à ce jour.
+  **Conséquence pratique importante** : les futures modifications que je fais sur le code ne se
+  déploient PAS automatiquement. Il faut à chaque fois régénérer un zip (exclure `.git/`,
+  `.claude/`, `.private/`, `.DS_Store` — voir commande utilisée : `zip -r -X site.zip . -x
+  ".git/*" ".claude/*" ".private/*" ".DS_Store"`) et le redéposer manuellement dans Cloudflare
+  (Workers et Pages → atelier-bonsai-yakushima → bouton "..." ou re-upload direct). Retenter la
+  connexion Git une prochaine fois si l'automatisation redevient nécessaire (le client a un
+  compte GitHub avec l'app Cloudflare déjà installée et autorisée sur ce dépôt spécifiquement,
+  donc l'autorisation en tant que telle n'est pas le problème — c'est un souci de redirection
+  côté interface Cloudflare/GitHub à l'usage).
+- Pas de nom de domaine personnalisé à ce jour, le client achètera plus tard via Cloudflare
+  Registrar une fois le site validé par Maria.
 
 ## Prochaines étapes
 
-1. Récupérer les vraies photos/logo auprès de la cliente et remplacer les 3 placeholders
-   temporaires (voir « Illustrations et photos — statut »).
+1. Récupérer les vraies photos/logo restantes auprès de la cliente et remplacer les 3
+   placeholders (voir « Illustrations et photos — statut »). Le portrait de Maria est déjà réglé.
 2. Créer un compte gratuit sur web3forms.com, générer une clé d'accès, la renseigner dans
-   `contact.html` (`<input type="hidden" name="access_key" value="...">`).
+   `contact.html` (`<input type="hidden" name="access_key" value="...">`), puis redéployer.
 3. Décider des informations pratiques manquantes (tarifs, durée des stages, dates, nombre de
    places par session, individuel/groupe) — actuellement pas affichées faute de donnée.
-4. Créer le dépôt GitHub et le projet Cloudflare Pages (déploiement sur `*.pages.dev` dans un
-   premier temps).
-5. Achat du nom de domaine (Cloudflare Registrar) une fois le site validé, puis rattachement au
-   projet Cloudflare Pages.
+4. Réessayer de connecter le dépôt Git à Cloudflare Pages pour automatiser le déploiement (voir
+   « Déploiement » ci-dessus), ou continuer en zip manuel si ça reste bloqué.
+5. Achat du nom de domaine (Cloudflare Registrar) une fois le site validé.

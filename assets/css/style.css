@@ -355,6 +355,27 @@ img { max-width: 100%; display: block; }
   left: var(--space-sm);
 }
 .zen-feature--reverse .zen-feature__vertical { left: auto; right: var(--space-sm); }
+
+/* --- Portrait rond (signature auteur) --- */
+.author-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+.author-badge__photo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid var(--color-line);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.author-badge__name {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--color-sage-700);
+}
 @media (max-width: 860px) {
   .zen-feature,
   .zen-feature--reverse { grid-template-columns: 1fr; gap: var(--space-lg); }
