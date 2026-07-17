@@ -307,6 +307,66 @@ img { max-width: 100%; display: block; }
 }
 .hero__photo img { width: 100%; height: auto; display: block; }
 
+/* --- Composition asymétrique japonisante (portrait détouré + kanji filigrane) --- */
+.zen-feature {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  gap: var(--space-2xl);
+}
+.zen-feature--reverse { grid-template-columns: 1.1fr 1fr; }
+.zen-feature--reverse .zen-feature__text { order: 2; }
+.zen-feature--reverse .zen-feature__media { order: 1; }
+.zen-feature__text { position: relative; z-index: 2; }
+.zen-feature__kanji {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 18rem;
+  line-height: 1;
+  color: var(--color-sage-500);
+  opacity: 0.16;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+.zen-feature--reverse .zen-feature__kanji,
+.zen-feature__kanji--right { left: auto; right: 0; }
+.zen-feature__media { position: relative; z-index: 1; }
+.zen-feature__media img {
+  width: 85%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 26px 30px rgba(34, 31, 28, 0.16));
+}
+.zen-feature__vertical {
+  writing-mode: vertical-rl;
+  font-size: 0.75rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-vermillion-500);
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-sm);
+}
+.zen-feature--reverse .zen-feature__vertical { left: auto; right: var(--space-sm); }
+@media (max-width: 860px) {
+  .zen-feature,
+  .zen-feature--reverse { grid-template-columns: 1fr; gap: var(--space-lg); }
+  .zen-feature--reverse .zen-feature__text,
+  .zen-feature--reverse .zen-feature__media { order: initial; }
+  .zen-feature__media { order: -1; }
+  .zen-feature__kanji { font-size: 8rem; }
+  .zen-feature--reverse .zen-feature__kanji,
+  .zen-feature__kanji--right { right: auto; left: 0; }
+  .zen-feature__vertical { display: none; }
+}
+
 /* --- Section deux colonnes --- */
 .split {
   display: grid;

@@ -57,6 +57,20 @@ repensé dans cet esprit après une première version plus « artisanale/chaleur
 - **Le sceau `.hanko`** : carré vermillon avec le kanji 山 (yama, « montagne », clin d'œil à
   Yakushima) à côté du nom du site dans le logo, tient lieu de logo temporaire tant que la
   cliente n'en a pas fourni.
+- **Composition `.zen-feature`** (2026-07-16, suite à la demande cliente d'une mise en page
+  « plus créative » pour « Qui suis-je ? ») : layout asymétrique remplaçant le `.split` classique
+  pour les deux sections « Qui suis-je ? » (hero d'`a-propos.html` et le teaser d'`index.html`) —
+  grand kanji en filigrane (`.zen-feature__kanji`, actuellement 静 shizu/« calme, sérénité », en
+  écho au texte de Maria sur sa recherche de sérénité) positionné en absolu derrière le texte,
+  photo détourée (fond retiré, `filter: drop-shadow(...)` plutôt qu'un cadre avec bordure) qui
+  déborde visuellement de la grille, petite légende verticale `.zen-feature__vertical` en
+  `writing-mode: vertical-rl` (masquée sous 860px). Utiliser `.zen-feature__kanji--right` (ou le
+  modificateur `.zen-feature--reverse`, qui inverse aussi l'ordre media/texte) quand la photo est
+  du côté gauche, pour que le kanji reste derrière la colonne de texte plutôt que sous la photo.
+  Opacité du kanji réglée à 0,16 (0,07 testé d'abord, invisible à l'écran — corrigé après
+  vérification visuelle). Réservé pour l'instant aux deux sections « Qui suis-je ? » : ne pas
+  systématiser ce traitement à toutes les sections `.split` du site, ça perdrait son effet de
+  signature si générisé partout.
 
 Palette définie dans `:root` de `assets/css/style.css`, contrastes vérifiés ≥ 4,5:1 pour texte
 blanc sur boutons primaire/accent :
@@ -77,15 +91,26 @@ site (par exemple en complément de photos, pas uniquement en placeholder).
 Trois photos ont ensuite été intégrées comme **placeholders temporaires**, à remplacer dès que
 la cliente aura ses propres photos (elle l'a confirmé explicitement : « on peut placer ces
 photos, qui seront remplacées par Maria ») :
-- `assets/images/hero-bonsai-alcove.webp` (hero accueil) et
-  `assets/images/a-propos-bonsai-genevrier.webp` (page à propos) : deux photos de la banque
-  **Pexels** (licence gratuite, usage commercial autorisé sans attribution — vérifié avant
-  intégration), ne représentent pas les arbres réels de Maria.
+- `assets/images/hero-bonsai-alcove.webp` (hero accueil) : photo de la banque **Pexels**
+  (licence gratuite, usage commercial autorisé sans attribution — vérifié avant intégration),
+  ne représente pas un arbre réel de Maria.
+- `assets/images/bonsai-cutout.webp` (genévrier Pexels `pexels-j-232682-6392043.jpg`, fond
+  détouré avec `rembg`/U2Net, recadré sur le sujet + petite marge, WebP avec canal alpha) :
+  utilisé dans les deux compositions `.zen-feature` « Qui suis-je ? » (accueil et à propos).
+  L'ancienne version encadrée `a-propos-bonsai-genevrier.webp` (fond studio gris conservé, boîte
+  avec bordure) a été supprimée, remplacée par cette version détourée suite à la demande cliente
+  de retirer l'arrière-plan pour une mise en page plus créative/japonisante.
 - `assets/images/atelier-ligature-taille.webp` (page ateliers, mains en train de ligaturer/
   tailler un pin) : extraite de la livraison photo professionnelle de l'événement « Jardins et
   Nature en Fête 2026 » (dossier `Desktop/JNF2026/.../Photo JNF 2026/`), où Maria intervient
   comme experte bonsaï. Usage confirmé explicitement par la cliente pour ce site, en attendant
   ses propres photos.
+
+**Outil de détourure** : `rembg` (modèle U2Net, ~176 Mo téléchargé au premier usage dans
+`~/.u2net/`) installé via `pip3 install rembg onnxruntime` — pas encore dans un fichier de
+dépendances du projet puisque ce n'est pas un besoin récurrent du build (aucun build step), juste
+un outil ponctuel utilisé en local pour cette détourure. Si une nouvelle détourure est nécessaire
+plus tard, réinstaller au besoin plutôt que d'ajouter une dépendance permanente au projet.
 
 **Point de vigilance photos en général sur ce projet** : plusieurs photos proposées par la
 cliente au fil de la conversation se sont révélées non réutilisables et ont été écartées :
