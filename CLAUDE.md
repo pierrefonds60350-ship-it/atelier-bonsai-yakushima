@@ -93,11 +93,17 @@ la cliente aura ses propres photos (elle l'a confirmé explicitement : « on peu
 photos, qui seront remplacées par Maria ») :
 - `assets/images/hero-bonsai-alcove.webp` (hero accueil) : photo de la banque **Pexels**
   (licence gratuite, usage commercial autorisé sans attribution — vérifié avant intégration),
-  ne représente pas un arbre réel de Maria. **Recadrée le 2026-07-17** (bounding box du contenu
-  non-noir calculé via numpy pour retirer la grande marge noire du fond studio d'origine, 675×900
-  → 559×555) à la demande de la cliente (« enlève le rectangle noir autour de la photo »).
-  `.hero__photo` en CSS est passé de `max-width:320px` + bordure fine à `max-width:620px` sans
-  bordure avec `filter: drop-shadow(...)` sur l'image, pour un vrai visuel de hero plutôt qu'une
+  ne représente pas un arbre réel de Maria. **Retraitée le 2026-07-17 en deux temps** à la
+  demande de la cliente : d'abord recadrage (bounding box du contenu non-noir via numpy, 675×900
+  → 559×555) pour réduire la marge noire, puis — la cliente voulant que le noir disparaisse
+  complètement, pas juste être réduit (« il y a toujours le carré noir, il faut le rendre
+  transparent ») — **détourure complète au fond noir avec `rembg`/U2Net** (541×538 final, WebP
+  avec canal alpha), gardant uniquement le cercle éclairé et l'étagère en bois qui dépasse du
+  cercle (rembg gère bien cette silhouette non circulaire). `.hero__photo` en CSS est passé de
+  `max-width:320px` + bordure fine à `max-width:620px` **sans bordure ni `border-radius`/
+  `overflow:hidden`** (devenus inutiles, l'image a maintenant sa propre silhouette transparente)
+  avec juste `filter: drop-shadow(...)` sur l'image, pour un vrai visuel de hero qui flotte sur
+  le fond du site plutôt qu'une
   petite vignette encadrée.
 - `assets/images/bonsai-cutout.webp` (genévrier Pexels `pexels-j-232682-6392043.jpg`, fond
   détouré avec `rembg`/U2Net, recadré sur le sujet + petite marge, WebP avec canal alpha) :

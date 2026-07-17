@@ -302,8 +302,6 @@ img { max-width: 100%; display: block; }
   width: 100%;
   max-width: 620px;
   margin: 0 auto;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
 }
 .hero__photo img {
   width: 100%;
