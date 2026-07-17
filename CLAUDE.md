@@ -93,7 +93,12 @@ la cliente aura ses propres photos (elle l'a confirmé explicitement : « on peu
 photos, qui seront remplacées par Maria ») :
 - `assets/images/hero-bonsai-alcove.webp` (hero accueil) : photo de la banque **Pexels**
   (licence gratuite, usage commercial autorisé sans attribution — vérifié avant intégration),
-  ne représente pas un arbre réel de Maria.
+  ne représente pas un arbre réel de Maria. **Recadrée le 2026-07-17** (bounding box du contenu
+  non-noir calculé via numpy pour retirer la grande marge noire du fond studio d'origine, 675×900
+  → 559×555) à la demande de la cliente (« enlève le rectangle noir autour de la photo »).
+  `.hero__photo` en CSS est passé de `max-width:320px` + bordure fine à `max-width:620px` sans
+  bordure avec `filter: drop-shadow(...)` sur l'image, pour un vrai visuel de hero plutôt qu'une
+  petite vignette encadrée.
 - `assets/images/bonsai-cutout.webp` (genévrier Pexels `pexels-j-232682-6392043.jpg`, fond
   détouré avec `rembg`/U2Net, recadré sur le sujet + petite marge, WebP avec canal alpha) :
   utilisé dans les deux compositions `.zen-feature` « Qui suis-je ? » (accueil et à propos).
