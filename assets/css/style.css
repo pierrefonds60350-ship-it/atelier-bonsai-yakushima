@@ -212,18 +212,11 @@ img { max-width: 100%; display: block; }
   text-decoration: none;
   line-height: 1.1;
 }
-.hanko {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
+.logo__mark {
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
-  background: var(--color-vermillion-500);
-  color: var(--color-white);
-  font-family: var(--font-heading);
-  font-size: 1.05rem;
-  border-radius: var(--radius-sm);
+  display: block;
 }
 .logo__text { display: block; }
 .logo__sub {

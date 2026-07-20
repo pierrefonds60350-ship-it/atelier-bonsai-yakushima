@@ -54,9 +54,16 @@ repensé dans cet esprit après une première version plus « artisanale/chaleur
   liseré vermillon en haut, pas de bloc vermillon plein comme avant).
 - **Motif `.ornament`** (trait fin + petit cercle) en haut des sections/hero pour un rythme
   calme, esprit zen.
-- **Le sceau `.hanko`** : carré vermillon avec le kanji 山 (yama, « montagne », clin d'œil à
-  Yakushima) à côté du nom du site dans le logo, tient lieu de logo temporaire tant que la
-  cliente n'en a pas fourni.
+- **Logo réel de la cliente (2026-07-20)**, remplace le sceau `.hanko` provisoire (carré
+  vermillon avec le kanji 山) : `assets/images/logo-mark.webp` (176×176, transparent, généré
+  depuis `1.logo Blanc.png` fourni par la cliente dans `~/JNF/Logos & Photos /Logo 2026/`,
+  variante « Blanc » = arbre/texte blanc sur cercle vermillon façon pinceau/enso ; il existe
+  aussi une variante « Noir » `2.Logo Noir.png` non utilisée, texte noir sur le même cercle
+  rouge). Affiché en `.logo__mark` (40px) à côté du texte `.logo__text` dans le header et le
+  footer des 4 pages — heureux hasard, le logo officiel de la cliente est lui-même un sceau
+  rond vermillon, donc esthétiquement identique au sceau provisoire qu'il remplace, juste avec
+  le vrai visuel de marque. `assets/images/favicon.png` (256×256) généré depuis le même fichier
+  source, référencé en `<link rel="icon">` sur les 4 pages.
 - **Composition `.zen-feature`** (2026-07-16, suite à la demande cliente d'une mise en page
   « plus créative » pour « Qui suis-je ? ») : layout asymétrique remplaçant le `.split` classique
   pour les deux sections « Qui suis-je ? » (hero d'`a-propos.html` et le teaser d'`index.html`) —
@@ -160,7 +167,7 @@ maintenant une vraie photo (voir ci-dessus), plus un placeholder. Toujours à fo
 cliente, pour remplacer les 3 placeholders restants :
 - Vraies photos de l'atelier / des bonsaïs de Maria (hero de l'accueil, page à propos, page
   ateliers).
-- Logo, si la cliente en a un (sinon le site garde le sceau `.hanko` 山 en logo temporaire).
+- ~~Logo~~ fourni et intégré le 2026-07-20 (voir « Direction artistique » ci-dessus).
 
 ## Déploiement (2026-07-17)
 
